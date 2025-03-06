@@ -1,0 +1,1 @@
+-- primary key, error code, resolve (boolean), resolve date
