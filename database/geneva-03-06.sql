@@ -1,4 +1,6 @@
 -- Creation of Geneva table 03-06-2025
+DROP TABLE IF EXISTS geneva; 
+
 CREATE TABLE IF NOT EXISTS geneva (
     id SERIAL PRIMARY KEY,
     interface_type VARCHAR(255) NOT NULL,
@@ -13,46 +15,22 @@ CREATE TABLE IF NOT EXISTS geneva (
     asset_id BIGINT NOT NULL,
     cusip VARCHAR(9),
     isin VARCHAR(12) NOT NULL,
-    sedol VARCHAR(7),
     loanx VARCHAR(15) NOT NULL,
-    red_code VARCHAR(25),
-    ticker VARCHAR(25),
-    vpm_asset_id VARCHAR(25),
-    wso_asset_id VARCHAR(25),
-    underlying_asset_id VARCHAR(25),
-    underlying_cusip VARCHAR(25),
-    underlying_isin VARCHAR(25),
-    underlying_sedol VARCHAR(25),
-    underlying_ticker VARCHAR(25),
     asset_type VARCHAR(25) NOT NULL,
     asset_class VARCHAR(25) NOT NULL,
     asset_class_name VARCHAR(25) NOT NULL,
-    min_journal_id VARCHAR(15) NOT NULL,
-    max_journal_id VARCHAR(15) NOT NULL,
-    journal_amount_id VARCHAR(15) NOT NULL,
     clearing_account_id VARCHAR(15) NOT NULL,
     clearing_account_name VARCHAR(25) NOT NULL,
     currency_id VARCHAR(15) NOT NULL,
     td_amount INT NOT NULL,
     sd_amount INT NOT NULL,
-    td_multiplier INT NOT NULL,
-    sd_multiplier INT NOT NULL,
-    amount_type_xref_name VARCHAR(25) NOT NULL,
     effective_date DATE NOT NULL,
     settle_date DATE NOT NULL,
     event_xsrc VARCHAR(25),
-    event_id_xref VARCHAR(25)
+    event_id_xref VARCHAR(25),
     trade_id INT NOT NULL,
-    journal_amount_xsrc VARCHAR(25) NOT NULL,
-    geneva_transaction_id INT NOT NULL,
     geneva_comments VARCHAR(255),
     geneva_portfolio_event_type VARCHAR(25) NOT NULL,
-    journal_amount_id_xref VARCHAR(25) NOT NULL,
-    amount_type_xref VARCHAR(25) NOT NULL,
-    journal_amount_name VARCHAR(25) NOT NULL,
-    journal_amount_note VARCHAR(25) NOT NULL,
-    -- clearing_account_id INT NOT NULL,
-    -- clearing_account_name in the excel spreadsheet twice
     common_asset_id INT NOT NULL,
     recon_date DATE NOT NULL,
     recon_amount INT NOT NULL,
@@ -61,6 +39,6 @@ CREATE TABLE IF NOT EXISTS geneva (
     min_journal_amount_id INT NOT NULL,
     max_journal_amount_id INT NOT NULL,
     ad_amount INT NOT NULL,
-    axiom_product_id INT NOT NULL,
+    axiom_product_id INT NOT NULL
     -- FOREIGN KEY (bank_id) REFERENCES bank(id) ON DELETE CASCADE
 )
